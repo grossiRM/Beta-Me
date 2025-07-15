@@ -1,1 +1,23 @@
-https://hub.2i2c.mybinder.org/user/grossirm-beta-me-iybvyqfq/doc/tree/01a_Freyberg1988.ipynb		very first
+#ref							Explicação 01						Explicação 02
+______________________________________________________________________________________________________________________________________
+E:\15_REPOS\01__Beta-Me					MS Windows Explorer (PC)				Arquivos originais
+	01a_Freyberg1988.ipynb				Exemplo 01						----------					
+	01b_Load1998.ipynb				Exemplo 02						----------
+https://github.com/grossiRM/Beta-Me/tree/main		REPOsitório On-line					Arquivos espelhados (Github)
+	01a_Freyberg1988.ipynb				----------						----------
+	01b_Load1998.ipynb				*.ipyinb  [Codigos Python, formato Jupyter Notebook]	roda também via Visual Studio (VS)
+______________________________________________________________________________________________________________________________________
+https://github.com/grossiRM/Beta-Me/tree/main									Base de Dados
+https://github.com/grossiRM/Beta-Me/blob/main/01a_Freyberg1988.ipynb						Projeto
+https://github.com/grossiRM/Beta-Me/blob/main/data_Freyberg1988/idomain.txt					Dados
+______________________________________________________________________________________________________________________________________
+https://hub.2i2c.mybinder.org/user/grossirm-beta-me-iybvyqfq/doc/tree/01a_Freyberg1988.ipynb			Espelhados [again] .. na intenet
+https://hub.2i2c.mybinder.org/user/grossirm-beta-me-iybvyqfq/doc/tree/01a_Freyberg1988.ipynb			Endereço inicial  (.. para o usuário!) 
+
+https://hub.2i2c.mybinder.org/user/grossirm-beta-me-x4suk73d/doc/tree/01a_Freyberg1988.ipynb
+
+
+https://github.com/grossiRM/Beta-Me/tree/main/data_Freyberg1988							Base de Dados 
+	https://github.com/grossiRM/Beta-Me/blob/main/data_Freyberg1988/bottom.txt				*.txt 1
+	https://github.com/grossiRM/Beta-Me/blob/main/data_Freyberg1988/hydraulic_conductivity.txt		*.txt 2
+	https://github.com/grossiRM/Beta-Me/blob/main/data_Freyberg1988/idomain.txt				*.txt 3
