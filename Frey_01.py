@@ -1,7 +1,7 @@
 import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; from pathlib import Path 
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-sim_ws=Path("./data/Freyberg")  ;sim_ws2=Path("./01a")  ;sim_ws2.mkdir(exist_ok=True)  ;sim_name='Freyberg'  
+sim_ws=Path("./data/Freyberg")  ;sim_ws2=Path("./a01a")  ;sim_ws2.mkdir(exist_ok=True)  ;sim_name='Freyberg'  
 
 bottom = np.loadtxt(sim_ws / 'bottom.txt')  ; k11 = np.loadtxt(sim_ws / 'hydraulic_conductivity.txt')    ; idomain = np.loadtxt(sim_ws / 'idomain.txt', dtype=np.int32)
 length_units="meters"                       ; nlay=1;nrow=40;ncol=20        ; delr=250.0;delc=250.0                                    ; top=35.0;icelltype=1;strt=45.0

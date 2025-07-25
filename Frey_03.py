@@ -2,7 +2,7 @@ import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; f
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 sim_ws=Path("./data/Freyberg")
-sim_ws1 = Path("./01a") ; exe_name = 'E:\\15_REPOS\\00_BETAMI\\bin\\mf6.exe' ; sim_name='Freyberg'  
+sim_ws1 = Path("./a01a") ; exe_name = 'E:\\15_REPOS\\00_BETAMI\\bin\\mf6.exe' ; sim_name='Freyberg'  
 bottom = np.loadtxt(sim_ws / 'bottom.txt')   
 
 sim = flopy.mf6.MFSimulation.load(sim_ws = sim_ws1, verbosity_level=0, exe_name=exe_name) 
