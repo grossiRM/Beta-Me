@@ -9,8 +9,8 @@ Visual Stutio              *.py
 ###     python Frey_02.py
 ###     python Frey_03.py
 _______________________________ 
-________(1) - Environment (Vbeta):     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  
-________(2) -                          Vbeta\Scripts\Activate
-________(3) - pip .. (modules)         flopy , path, mathplotlib and a few others
-________(4) - Execute                  python Frey_01.py _02_03!
+________ (1) - Environment (Vbeta):     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  
+________ (2) -                          Vbeta\Scripts\Activate
+________ (3) - pip .. (modules)         flopy , path, mathplotlib and a few others
+________ (4) - Execute                  python Frey_01.py _02_03!
 
