@@ -1,8 +1,8 @@
 # Flopy Classic Freyberg Problem 
 _______________________________
-mf6pro Kernel (Environment) or pip install all needed modules
-[https://github.com/grossiRM/Beta-Me/blob/main/01_Freyberg_very_first.ipynb]         
-[https://github.com/grossiRM/Beta-Me/blob/main/01b_Load1998_secound_one.ipynb]         
+mf6pro Kernel (Environment) or pip install all needed modules                   <br>
+[https://github.com/grossiRM/Beta-Me/blob/main/01_Freyberg_very_first.ipynb]    <br>         
+[https://github.com/grossiRM/Beta-Me/blob/main/01b_Load1998_secound_one.ipynb]  <br>       
 _______________________________ 
 pro - to run *.py directilly : Visual Studio 
 - python Frey_01.py
