@@ -1,18 +1,18 @@
 # Flopy Classic Freyberg Problem 
 _______________________________
 mf6pro Kernel (Environment) or pip install all needed modules
-###    Jupyter notebook    *.ipyinb         
-###    load                *.ipyinb         
+[https://github.com/grossiRM/Beta-Me/blob/main/01_Freyberg_very_first.ipynb]         
+[https://github.com/grossiRM/Beta-Me/blob/main/01b_Load1998_secound_one.ipynb]         
 _______________________________ 
-pro - to run *.py directilly : Visual Stutio 
-###     python Frey_01.py
-###     python Frey_02.py
-###     python Frey_03.py
+pro - to run *.py directilly : Visual Studio 
+- python Frey_01.py
+- python Frey_02.py
+- python Frey_03.py
 _______________________________ 
-VS terminal (from a previous folder A)
-________ (1) - Install Environment :     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  (change destination adress B ...adding!... \Vbeta)
+VS terminal (from anyone but folder B =  A)
+________ (1) - Install Environment :     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  (change destination adress to folder B ...adding!... \Vbeta)
 _______________________________ 
-VS terminal (the destination folder B)
+VS terminal .. at the destination folder B
 ________ (2) -                          Vbeta\Scripts\Activate
 ________ (3) - pip install              .. (modules)         flopy , path, mathplotlib and a few others
 ________ (4) - Execute                  python Frey_01.py _02_03!
