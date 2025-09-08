@@ -1,8 +1,7 @@
 from Frey_01 import *
-
-
 from flopy.utils.postprocessing import get_water_table  
-gwf = sim.get_model(sim_name)       ; heads = gwf.output.head()  
+
+gwf = sim.get_model(ID)       ; heads = gwf.output.head()  
 hds = gwf.output.head()             ; head = hds.get_alldata()[0]          ; wt = get_water_table(head)
 
 irow, icol = gwf.modelgrid.intersect(1200, 100)  

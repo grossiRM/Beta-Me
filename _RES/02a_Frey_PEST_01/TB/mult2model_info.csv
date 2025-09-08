@@ -1,0 +1,2 @@
+,org_file,model_file,use_cols,index_cols,fmt,sep,head_rows,upper_bound,lower_bound,operator,mlt_file,apply_order,zero_based
+0,org\freyberg6.npf_k_layer1.txt,freyberg6.npf_k_layer1.txt,,,%17.1F,,0,1e+30,-1e+30,m,mult\p_inst0_grid.csv,999,True

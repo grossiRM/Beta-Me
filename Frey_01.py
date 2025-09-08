@@ -1,9 +1,9 @@
 import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; from pathlib import Path 
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-sim_ws=Path("./data/Freyberg")  ;sim_ws2=Path("./a01a")  ;sim_ws2.mkdir(exist_ok=True)  ;sim_name='Freyberg'  
+ref_data=Path("./data/Freyberg")  ;TA=Path("_RES/folder_01c")  ;TA.mkdir(exist_ok=True)  ;ID='Freyberg'  
 
-bottom = np.loadtxt(sim_ws / 'bottom.txt')  ; k11 = np.loadtxt(sim_ws / 'hydraulic_conductivity.txt')    ; idomain = np.loadtxt(sim_ws / 'idomain.txt', dtype=np.int32)
+bottom = np.loadtxt(ref_data / 'bottom.txt')  ; k11 = np.loadtxt(ref_data / 'hydraulic_conductivity.txt')    ; idomain = np.loadtxt(ref_data / 'idomain.txt', dtype=np.int32)
 length_units="meters"                       ; nlay=1;nrow=40;ncol=20        ; delr=250.0;delc=250.0                                    ; top=35.0;icelltype=1;strt=45.0
 time_units="seconds"                        ; recharge=1.60000000e-09       ; nouter=100;ninner=25;hclose=1e-9;rclose=1e-3             ; nper=1; tdis_ds=((1.0,1.0,1),)
 
@@ -15,19 +15,19 @@ rbot = np.linspace(20.0, 10.25, num=nrow)   ; rstage = np.linspace(20.1, 11.25, 
 for idx, (s, b) in enumerate(zip(rstage, rbot)): riv_spd.append([0, idx, 14, s, 0.05, b]) 
 riv_spd = {0: riv_spd}
 
-sim = flopy.mf6.MFSimulation   (sim_name=sim_name,sim_ws=sim_ws2,exe_name="mf6",)
+sim = flopy.mf6.MFSimulation   (sim_name=ID,sim_ws=TA,exe_name="mf6",)
 flopy.mf6.ModflowTdis    (sim, nper=nper, perioddata=tdis_ds, time_units=time_units)
 flopy.mf6.ModflowIms     (sim,linear_acceleration="BICGSTAB",outer_maximum=nouter,outer_dvclose=hclose * 10.0,inner_maximum=ninner,
                           inner_dvclose=hclose,rcloserecord=f"{rclose} strict")
-gwf = flopy.mf6.ModflowGwf     (sim,modelname=sim_name,newtonoptions="NEWTON UNDER_RELAXATION")
+gwf = flopy.mf6.ModflowGwf     (sim,modelname=ID,newtonoptions="NEWTON UNDER_RELAXATION")
 flopy.mf6.ModflowGwfdis  (gwf,length_units=length_units,nlay=nlay,nrow=nrow,ncol=ncol,delr=delr,delc=delc,top=top,botm=bottom,idomain=idomain)
 flopy.mf6.ModflowGwfnpf  (gwf,icelltype=icelltype,k=k11,)
 flopy.mf6.ModflowGwfic   (gwf, strt=strt)
 flopy.mf6.ModflowGwfriv  (gwf, stress_period_data = riv_spd, pname="RIV-1")
 flopy.mf6.ModflowGwfwel  (gwf, stress_period_data = wel_spd, pname="WEL-1")
 flopy.mf6.ModflowGwfrcha (gwf, recharge=recharge)
-flopy.mf6.ModflowGwfchd  (gwf, stress_period_data = chd_spd)                                                     # ; bf=f"{sim_name}.cbc"
-flopy.mf6.ModflowGwfwel  (gwf,maxbound=1,pname="CF-1",filename=f"{sim_name}.cf.wel")        ; hf=f"{sim_name}.hds" ; bf=f"{sim_name}.bud"
+flopy.mf6.ModflowGwfchd  (gwf, stress_period_data = chd_spd)                                                     # ; bf=f"{ID}.cbc"
+flopy.mf6.ModflowGwfwel  (gwf,maxbound=1,pname="CF-1",filename=f"{ID}.cf.wel")        ; hf=f"{ID}.hds" ; bf=f"{ID}.bud"
 flopy.mf6.ModflowGwfoc   (gwf ,head_filerecord=hf,budget_filerecord=bf,headprintrecord=[("COLUMNS", 10, "WIDTH", 15, "DIGITS", 6, "GENERAL")],
                          saverecord=[("HEAD", "ALL"), ("BUDGET", "ALL")] ,printrecord=[("HEAD", "ALL"), ("BUDGET", "ALL")])  
 sim.write_simulation(silent=False)  
