@@ -1,0 +1,14 @@
+name: example-environment
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - lmfit
+  - flopy
+  - simplekml
+  - xlrd
+  - openpyxl
+  - scikit-learn

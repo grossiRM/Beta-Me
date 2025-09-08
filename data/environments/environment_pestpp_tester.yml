@@ -1,0 +1,29 @@
+name: pestpp_tester
+channels:
+  - conda-forge
+dependencies:
+  # required
+  - python<=3.11
+  - numpy>=1.15.0
+  - pandas
+  - scipy
+  # optional
+  - matplotlib>=1.4.0
+  - pyshp
+  - jinja2
+  # tests
+  - coveralls
+  - nose-timer
+  - pytest-xdist
+  - nbmake
+  - shapely
+  - flopy
+  - mfpymake
+  - imp
+  - nose
+  - pip
+  - git
+  - imp
+  - pip:
+    - git+https://github.com/pypest/pyemu.git@develop
+    - git+https://github.com/modflowpy/flopy.git

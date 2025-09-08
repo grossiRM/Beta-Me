@@ -1,0 +1,11 @@
+name: gw3099viz
+channels:
+  - conda-forge
+dependencies:
+
+  - python
+  - jupyter
+  - jupyterlab
+  - panoply>=5.5.1
+  - paraview
+  - qgis
