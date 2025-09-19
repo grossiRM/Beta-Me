@@ -1,3 +1,5 @@
+-   [https://github.com/grossiRM/Beta-Me/blob/main/Beta_xls/_02_Algebra_DEF.xlsx]
+
 # Flopy Classic Freyberg Problem 
 _______________________________
 mf6pro Kernel (Environment) or pip install all needed modules                   <br>
