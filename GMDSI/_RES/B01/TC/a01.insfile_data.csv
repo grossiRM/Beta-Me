@@ -1,0 +1,6 @@
+pest_file,model_file
+heads.csv.ins,heads.csv
+sfr.csv.ins,sfr.csv
+difh.csv.ins,heads.tdiff.csv
+difq.csv.ins,sfr.tdiff.csv
+.\freyberg_mp.mpend.ins,.\freyberg_mp.mpend
