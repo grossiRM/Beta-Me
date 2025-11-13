@@ -1,6 +1,6 @@
 # Highlights 
 
--   [https://github.com/grossiRM/Beta-Me/blob/main/Beta_xls/04_Time_Series.xlsx]
+-   [https://github.com/grossiRM/Beta-Me/blob/main/GMDSI/part0_01_intro_freyberg_OBS________A2__.ipynb]
 
 # Flopy Classic Freyberg Problem 
 _______________________________

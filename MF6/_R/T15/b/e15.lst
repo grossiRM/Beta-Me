@@ -1,0 +1,1794 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.5.0 05/23/2024
+
+   MODFLOW 6 compiled Jun 21 2024 02:57:23 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Users\gross.DESKTOP-AIRQM2M\anaconda3\envs\gmdsitut\Scripts\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/E15/DIS                                 
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/E15/NPF                                 
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/E15/IC                                  
+
+
+ Setting Discretization Options
+    Model length unit [0=UND, 1=FEET, 2=METERS, 3=CENTIMETERS] set as 1
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 5
+    NROW = 27
+    NCOL = 17
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+    IDOMAIN set from input file
+ End Setting Discretization Griddata
+
+
+ The specified IDOMAIN results in a reduced number of cells.
+ Number of user nodes: 2295
+ Number of nodes in solution: 2227
+
+
+ Setting NPF Options
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/E15/RCHA_0                              
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+    RECHARGE INPUT WILL BE READ AS ARRAY(S).
+ END OF RCHA OPTIONS
+
+ EVT   -- EVT PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/E15/EVTA_0                              
+
+ PROCESSING EVT BASE OPTIONS
+ END OF EVT BASE OPTIONS
+
+ PROCESSING EVTA OPTIONS
+    EVAPOTRANSPIRATION INPUT WILL BE READ AS ARRAYS.
+ END OF EVTA OPTIONS
+
+ CHD   -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/E15/CHD_0                               
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =     270
+ END OF CHD BASE DIMENSIONS
+
+ SFR   -- SFR PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1016
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+
+ PROCESSING SFR OPTIONS
+    SFR STAGES WILL BE PRINTED TO LISTING FILE.
+    SFR FLOWS WILL BE PRINTED TO LISTING FILE.
+    MOVER OPTION ENABLED
+    LENGTH CONVERSION VALUE (3.280810000000000) SPECIFIED.
+    TIME CONVERSION VALUE (86400.00000000000) SPECIFIED.
+ END OF SFR OPTIONS
+
+ PROCESSING SFR DIMENSIONS
+    NREACHES = 22
+ END OF SFR DIMENSIONS
+
+ PROCESSING SFR PACKAGEDATA
+ END OF SFR PACKAGEDATA
+
+ PROCESSING SFR CONNECTIONDATA
+ END OF SFR CONNECTIONDATA
+
+ LAK   -- LAK PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1017
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+
+ PROCESSING LAK OPTIONS
+    LAK STAGES WILL BE PRINTED TO LISTING FILE.
+
+ OPENED e15.lak.obs
+ FILE TYPE:OBS   UNIT 1020   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+    MOVER OPTION ENABLED
+    TIME CONVERSION VALUE (   86400.00    ) SPECIFIED.
+    LENGTH CONVERSION VALUE (   3.280810    ) SPECIFIED.
+ END OF LAK OPTIONS
+
+ PROCESSING LAK DIMENSIONS
+    NLAKES =       2
+    NOUTLETS =       2
+ END OF LAK DIMENSIONS
+
+ PROCESSING LAK PACKAGEDATA
+ END OF LAK PACKAGEDATA
+
+
+    MAXBOUND =     114
+
+ PROCESSING LAK LAKE_CONNECTIONS
+ END OF LAK CONNECTIONDATA
+
+ PROCESSING LAK OUTLETS
+ END OF LAK OUTLETS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM UNIT 1006
+
+
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+ PROCESSING GRIDDATA
+
+                 ICONVERT = 1
+
+         SPECIFIC STORAGE =  0.3000000E-03
+
+           SPECIFIC YIELD =  0.2000000    
+ END PROCESSING GRIDDATA
+
+ MVR -- WATER MOVER PACKAGE, VERSION 8, 1/29/2016 INPUT READ FROM UNIT 1008
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+ PROCESSING MVR OPTIONS
+ END OF MVR OPTIONS
+
+ PROCESSING MVR DIMENSIONS
+    MAXMVR = 4
+    MAXPACKAGES = 2
+ END OF MVR DIMENSIONS
+
+ PROCESSING MVR PACKAGES
+   INCLUDING PACKAGE: E15/SFR-1
+   INCLUDING PACKAGE: E15/LAK-1
+ END OF MVR PACKAGES
+
+The observation utility is active for "E15"
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+
+Processing observation options:
+
+
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1022
+      FILE NAME: e15.dis.grb
+
+ OPENED e15.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1022   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1023
+      FILE NAME: e15.cbc
+
+ OPENED e15.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1023   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1024
+      FILE NAME: e15.hds
+
+ OPENED e15.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1024   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+ SFR PACKAGE (SFR-1) CONVERSION DATA
+    UNIT CONVERSION VALUE (128382.9751514183).
+
+
+The observation utility is active for "LAK-1"
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:57:50.
+
+Processing observation options:
+
+Text output number of digits of precision set to: 10
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "e15.lak.obs"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ LAKE1                                    CONTINUOUS  STAGE                          ALL TIMES    "  1"                                      e15.lak.obs.csv                                                                 
+ LAKE2                                    CONTINUOUS  STAGE                          ALL TIMES    "  2"                                      e15.lak.obs.csv                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+
+  READING WATER MOVERS FOR PERIOD 1
+
+ END OF DATA FOR PERIOD      1
+
+    4 MOVERS READ FOR PERIOD 1
+
+end timestep
+
+
+start timestep kper="1" kstp="2" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="3" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="4" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="5" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="6" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="7" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="8" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="9" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="10" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="11" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="12" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="13" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="14" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="15" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="16" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="17" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="18" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="19" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="20" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="21" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="22" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="23" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="24" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="25" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="26" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="27" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="28" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="29" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="30" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="31" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="32" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="33" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="34" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="35" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="36" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="37" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="38" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="39" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="40" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="41" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="42" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="43" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="44" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="45" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="46" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="47" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="48" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="49" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="50" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="51" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="52" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="53" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="54" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="55" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="56" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="57" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="58" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="59" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="60" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="61" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="62" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="63" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="64" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="65" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="66" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="67" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="68" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="69" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="70" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="71" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="72" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="73" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="74" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="75" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="76" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="77" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="78" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="79" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="80" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="81" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="82" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="83" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="84" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="85" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="86" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="87" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="88" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="89" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="90" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="91" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="92" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="93" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="94" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="95" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="96" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="97" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="98" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="99" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="100" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="101" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="102" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="103" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="104" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="105" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="106" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="107" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="108" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="109" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="110" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="111" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="112" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="113" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="114" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="115" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="116" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="117" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="118" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="119" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="120" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="121" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="122" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="123" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="124" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="125" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="126" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="127" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="128" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="129" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="130" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="131" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="132" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="133" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="134" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="135" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="136" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="137" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="138" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="139" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="140" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="141" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="142" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="143" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="144" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="145" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="146" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="147" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="148" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="149" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="150" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="151" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="152" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="153" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="154" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="155" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="156" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="157" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="158" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="159" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="160" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="161" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="162" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="163" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="164" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="165" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="166" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="167" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="168" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="169" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="170" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="171" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="172" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="173" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="174" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="175" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="176" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="177" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="178" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="179" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="180" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="181" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="182" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="183" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="184" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="185" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="186" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="187" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="188" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="189" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="190" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="191" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="192" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="193" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="194" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="195" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="196" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="197" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="198" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="199" mode="normal"
+
+
+end timestep
+
+
+start timestep kper="1" kstp="200" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL E15              PACKAGE NPF             CONNECTED TO MODEL E15              PACKAGE NPF              ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL E15              PACKAGE E15             CONNECTED TO MODEL E15              PACKAGE RCHA_0           ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL E15              PACKAGE E15             CONNECTED TO MODEL E15              PACKAGE EVTA_0           ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL E15              PACKAGE E15             CONNECTED TO MODEL E15              PACKAGE CHD_0            ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING              SFR IN MODEL E15              PACKAGE E15             CONNECTED TO MODEL E15              PACKAGE SFR-1            ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+ UBDSV06 SAVING              LAK IN MODEL E15              PACKAGE E15             CONNECTED TO MODEL E15              PACKAGE LAK-1            ON UNIT   1023 AT TIME STEP    200, STRESS PERIOD      1
+
+ SFR PACKAGE (SFR-1) FLOW RATES   PERIOD      1   STEP      200
+ -----------------------------------------------
+   NUMBER   CELLID                    RATE      
+ -----------------------------------------------
+     1      (1,2,5)              -50097.843     
+     2      (1,3,5)              -47389.491     
+     3      (1,4,5)              -51419.963     
+     4      (1,4,6)              -40458.923     
+     5      (1,4,7)              -19608.249     
+     6      (1,4,8)              -32412.970     
+     7      (1,5,8)              -35875.875     
+     8      (1,6,8)              -25491.490     
+     9      (1,12,9)             -27830.257     
+     10     (1,13,9)             -43565.723     
+     11     (1,14,10)            -23558.226     
+     12     (1,14,10)            -24775.766     
+     13     (1,15,10)            -41593.145     
+     14     (1,16,10)            -28113.901     
+     15     (1,22,10)            -29889.640     
+     16     (1,23,10)            -41459.766     
+     17     (1,23,11)            -24675.647     
+     18     (1,23,12)            -48859.417     
+     19     (1,23,13)            -52755.878     
+     20     (1,23,14)            -57243.781     
+     21     (1,23,15)            -66026.876     
+     22     (1,23,16)            -97545.803     
+ -----------------------------------------------
+
+
+
+
+ SFR-1 PACKAGE - SUMMARY OF FLOWS FOR EACH CONTROL VOLUME   PERIOD      1   STEP      200
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                                                                                               PERCENT   
+   NUMBER   CELLID                  INFLOW      OUTFLOW        GWF        RAINFALL   EVAPORATION     RUNOFF     EXT INFLOW  EXT OUTFLOW    STORAGE      FROM MVR      TO MVR      IN - OUT    DIFFERENCE 
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1      (1,2,5)               0.0000      -7.41298E+05  50098.       0.0000       0.0000       0.0000       6.91200E+05  0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     2      (1,3,5)               7.41298E+05 -7.88687E+05  47389.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     3      (1,4,5)               7.88687E+05 -8.40107E+05  51420.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     4      (1,4,6)               8.40107E+05 -8.80566E+05  40459.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     5      (1,4,7)               8.80566E+05 -9.00174E+05  19608.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     6      (1,4,8)               9.00174E+05 -9.32587E+05  32413.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     7      (1,5,8)               9.32587E+05 -9.68463E+05  35876.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     8      (1,6,8)               9.68463E+05  0.0000       25491.       0.0000       0.0000       0.0000       0.0000      -2.59606E-08  0.0000       0.0000      -9.93955E+05  0.0000       0.0000     
+     9      (1,12,9)              0.0000      -1.32833E+06  27830.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       1.30050E+06  0.0000       0.0000       0.0000     
+     10     (1,13,9)              1.32833E+06 -1.37189E+06  43566.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     11     (1,14,10)             1.37189E+06 -1.39545E+06  23558.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     12     (1,14,10)             1.39545E+06 -1.42023E+06  24776.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     13     (1,15,10)             1.42023E+06 -1.46182E+06  41593.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     14     (1,16,10)             1.46182E+06  0.0000       28114.       0.0000       0.0000       0.0000       0.0000      -6.98492E-08  0.0000       0.0000      -1.48993E+06  0.0000       0.0000     
+     15     (1,22,10)             0.0000      -9.40993E+05  29890.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       9.11104E+05  0.0000       0.0000       0.0000     
+     16     (1,23,10)             9.40993E+05 -9.82453E+05  41460.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     17     (1,23,11)             9.82453E+05 -1.00713E+06  24676.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     18     (1,23,12)             1.00713E+06 -1.05599E+06  48859.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     19     (1,23,13)             1.05599E+06 -1.10874E+06  52756.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     20     (1,23,14)             1.10874E+06 -1.16599E+06  57244.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     21     (1,23,15)             1.16599E+06 -1.23201E+06  66027.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     22     (1,23,16)             1.23201E+06  0.0000       97546.       0.0000       0.0000       0.0000       0.0000      -1.32956E+06  0.0000       0.0000       0.0000       0.0000       0.0000     
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ SFR PACKAGE (SFR-1) STAGES FOR EACH CONTROL VOLUME   PERIOD      1   STEP      200
+ -------------------------------------------------------------------------------------------------------------
+                                                                                      STREAMBED    STREAMBED  
+   NUMBER   CELLID                  STAGE        DEPTH        WIDTH       GWF HEAD   CONDUCTANCE    GRADIENT  
+ -------------------------------------------------------------------------------------------------------------
+     1      (1,2,5)               125.31       1.3649       5.0000       135.33       5000.0      -20.039     
+     2      (1,3,5)               124.26       1.4199       5.0000       133.74       5000.0      -18.956     
+     3      (1,4,5)               123.22       1.4743       5.0000       133.50       5000.0      -20.568     
+     4      (1,4,6)               122.16       1.5236       5.0000       130.25       5000.0      -16.184     
+     5      (1,4,7)               121.37       1.5553       5.0000       129.21       2500.0      -15.687     
+     6      (1,4,8)               120.70       1.5824       5.0000       129.35       3750.0      -17.287     
+     7      (1,5,8)               119.77       1.6175       5.0000       126.95       5000.0      -14.350     
+     8      (1,6,8)               118.70       1.6486       5.0000       123.80       5000.0      -10.197     
+     9      (1,12,9)              116.59       2.1473       5.0000       122.15       5000.0      -11.132     
+     10     (1,13,9)              115.80       2.1821       5.0000       124.51       5000.0      -17.426     
+     11     (1,14,10)             115.19       2.2145       5.0000       123.62       2795.0      -16.857     
+     12     (1,14,10)             114.76       2.2376       5.0000       123.62       2795.0      -17.729     
+     13     (1,15,10)             114.15       2.2691       5.0000       122.47       5000.0      -16.637     
+     14     (1,16,10)             113.36       2.3019       5.0000       118.98       5000.0      -11.246     
+     15     (1,22,10)             110.62       1.6678       5.0000       116.60       5000.0      -11.956     
+     16     (1,23,10)             109.83       1.7060       5.0000       120.89       3750.0      -22.112     
+     17     (1,23,11)             109.28       1.7410       5.0000       119.15       2500.0      -19.741     
+     18     (1,23,12)             108.61       1.7793       5.0000       118.38       5000.0      -19.544     
+     19     (1,23,13)             107.71       1.8314       5.0000       118.26       5000.0      -21.102     
+     20     (1,23,14)             106.82       1.8867       5.0000       118.27       5000.0      -22.898     
+     21     (1,23,15)             105.94       1.9474       5.0000       119.14       5000.0      -26.411     
+     22     (1,23,16)             105.07       2.0260       5.0000       124.58       5000.0      -39.018     
+ -------------------------------------------------------------------------------------------------------------
+
+
+
+ LAK PACKAGE (LAK-1) STAGES FOR EACH CONTROL VOLUME   PERIOD      1   STEP      200
+ --------------------------------------------------------------
+   NUMBER      STAGE     SURFACE AREA WETTED AREA     VOLUME   
+ --------------------------------------------------------------
+     1       116.98       6.25000E+06  6.55391E+06  1.04898E+08
+     2       111.92       6.25000E+06  6.51994E+06  7.32707E+07
+ --------------------------------------------------------------
+
+
+
+ HEAD WILL BE SAVED ON UNIT 1024 AT END OF TIME STEP  200, STRESS PERIOD    1
+
+
+  SFR-1 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  200, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE SFR-1      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =  1168309572.5933                   GWF =      910648.6296
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =  1036800000.0000            EXT-INFLOW =      691200.0000
+         EXT-OUTFLOW =       4.0965E-05           EXT-OUTFLOW =           0.0000
+             STORAGE =           0.0000               STORAGE =           0.0000
+            FROM-MVR =  3159821168.7605              FROM-MVR =     2211600.9862
+              TO-MVR =           0.0000                TO-MVR =           0.0000
+
+            TOTAL IN =  5364930741.3539              TOTAL IN =     3813449.6158
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =     5234196.2352                   GWF =           0.0000
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+         EXT-OUTFLOW =  1875594329.4904           EXT-OUTFLOW =     1329560.5770
+             STORAGE =           0.0000               STORAGE =           0.0000
+            FROM-MVR =           0.0000              FROM-MVR =           0.0000
+              TO-MVR =  3484102215.6282                TO-MVR =     2483889.0388
+
+           TOTAL OUT =  5364930741.3539             TOTAL OUT =     3813449.6158
+
+            IN - OUT =      -2.8610E-06              IN - OUT =       4.6566E-10
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  LAK-1 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  200, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE LAK-1      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =   766683113.6738                   GWF =      622583.4000
+            RAINFALL =   217500000.0000              RAINFALL =      145000.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+          WITHDRAWAL =           0.0000            WITHDRAWAL =           0.0000
+         EXT-OUTFLOW =       2.8980E-05           EXT-OUTFLOW =           0.0000
+             STORAGE =   204077972.9253               STORAGE =           0.0000
+            CONSTANT =           0.0000              CONSTANT =           0.0000
+            FROM-MVR =  3484102215.6282              FROM-MVR =     2483889.0388
+              TO-MVR =           0.0000                TO-MVR =           0.0000
+
+            TOTAL IN =  4672363302.2273              TOTAL IN =     3251472.4388
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =     2304859.3720                   GWF =           0.0000
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =   193125000.0000           EVAPORATION =      128750.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+          WITHDRAWAL =           0.0000            WITHDRAWAL =           0.0000
+         EXT-OUTFLOW =  1307365852.0286           EXT-OUTFLOW =      911103.7697
+             STORAGE =     9746422.0661               STORAGE =          17.6829
+            CONSTANT =           0.0000              CONSTANT =           0.0000
+            FROM-MVR =           0.0000              FROM-MVR =           0.0000
+              TO-MVR =  3159821168.7605                TO-MVR =     2211600.9862
+
+           TOTAL OUT =  4672363302.2272             TOTAL OUT =     3251472.4388
+
+            IN - OUT =       6.9618E-05              IN - OUT =      -1.6019E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+  WATER MOVER BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  200, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE WATER MOVER      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+               SFR-1 =  3484102215.6282                 SFR-1 =     2483889.0388
+               LAK-1 =  3159821168.7605                 LAK-1 =     2211600.9862
+
+            TOTAL IN =  6643923384.3887              TOTAL IN =     4695490.0250
+
+          OUT:                                     OUT:
+          ----                                     ----
+               SFR-1 =  3159821168.7605                 SFR-1 =     2211600.9862
+               LAK-1 =  3484102215.6282                 LAK-1 =     2483889.0388
+
+           TOTAL OUT =  6643923384.3887             TOTAL OUT =     4695490.0250
+
+            IN - OUT =           0.0000              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  200, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1150100.8871                STO-SS =           0.0000     STORAGE                          
+              STO-SY =     2667105.4710                STO-SY =           0.0000     STORAGE                          
+                RCHA =  4241250000.0000                  RCHA =     2827500.0000     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+                 CHD =   971896861.6041                   CHD =      359935.3471     CHD_0                            
+                 SFR =     5234196.2352                   SFR =           0.0000     SFR-1                            
+                 LAK =     2304859.3720                   LAK =           0.0000     LAK-1                            
+
+            TOTAL IN =  5224503123.5694              TOTAL IN =     3187435.3471
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =   120166782.8544                STO-SS =         181.9655     STORAGE                          
+              STO-SY =  1267690563.8759                STO-SY =        1631.2192     STORAGE                          
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =  1901653090.5909                  EVTA =     1652390.1328     EVTA_0                           
+                 CHD =           0.0000                   CHD =           0.0000     CHD_0                            
+                 SFR =  1168309572.5933                   SFR =      910648.6296     SFR-1                            
+                 LAK =   766683113.6738                   LAK =      622583.4000     LAK-1                            
+
+           TOTAL OUT =  5224503123.5883             TOTAL OUT =     3187435.3471
+
+            IN - OUT =      -1.8875E-02              IN - OUT =      -1.6780E-05
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP  200 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.02150E+06  17025.      283.75      11.823     3.23695E-02
+ STRESS PERIOD TIME 1.29600E+08 2.16000E+06  36000.      1500.0      4.1068    
+         TOTAL TIME 1.29600E+08 2.16000E+06  36000.      1500.0      4.1068    
+
+
+end timestep
+

@@ -1,0 +1,819 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.5.0 05/23/2024
+
+   MODFLOW 6 compiled Jun 21 2024 02:57:23 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Users\gross.DESKTOP-AIRQM2M\anaconda3\envs\gmdsitut\Scripts\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/FLOW/DIS                                
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/FLOW/NPF                                
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/FLOW/IC                                 
+
+
+ Setting Discretization Options
+    Model length unit [0=UND, 1=FEET, 2=METERS, 3=CENTIMETERS] set as 1
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 8
+    NROW = 36
+    NCOL = 23
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+    IDOMAIN set from input file
+ End Setting Discretization Griddata
+
+
+ The specified IDOMAIN results in a reduced number of cells.
+ Number of user nodes: 6624
+ Number of nodes in solution: 5971
+
+
+ Setting NPF Options
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+    Saturation will be written to DATA-SAT in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/FLOW/RCH-1                              
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+    RECHARGE INPUT WILL BE READ AS ARRAY(S).
+ END OF RCHA OPTIONS
+
+ CHD   -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/FLOW/CHD-1                              
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =     322
+ END OF CHD BASE DIMENSIONS
+
+ SFR   -- SFR PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1012
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:58:13.
+
+ PROCESSING SFR OPTIONS
+    SFR BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    SFR STAGES WILL BE PRINTED TO LISTING FILE.
+    SFR FLOWS WILL BE PRINTED TO LISTING FILE.
+
+ OPENED flow.sfr.bin
+ FILE TYPE:DATA(BINARY)   UNIT 1016   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    SFR  STAGE  WILL BE SAVED TO FILE: flow.sfr.bin
+    OPENED ON UNIT: 1016
+
+ OPENED flow.sfr.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    SFR  BUDGET  WILL BE SAVED TO FILE: flow.sfr.bud
+    OPENED ON UNIT: 1017
+
+ OPENED flow.sfr.obs
+ FILE TYPE:OBS   UNIT 1018   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+    MOVER OPTION ENABLED
+    LENGTH CONVERSION VALUE (3.280810000000000) SPECIFIED.
+    TIME CONVERSION VALUE (86400.00000000000) SPECIFIED.
+ END OF SFR OPTIONS
+
+ PROCESSING SFR DIMENSIONS
+    NREACHES = 38
+ END OF SFR DIMENSIONS
+
+ PROCESSING SFR PACKAGEDATA
+ END OF SFR PACKAGEDATA
+
+ PROCESSING SFR CONNECTIONDATA
+ END OF SFR CONNECTIONDATA
+
+ LAK   -- LAK PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1013
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:58:13.
+
+ PROCESSING LAK OPTIONS
+    LAK BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    LAK STAGES WILL BE PRINTED TO LISTING FILE.
+    LAK FLOWS WILL BE PRINTED TO LISTING FILE.
+
+ OPENED flow.lak.bin
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    LAK  STAGE  WILL BE SAVED TO FILE: flow.lak.bin
+    OPENED ON UNIT: 1019
+
+ OPENED flow.lak.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1020   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    LAK  BUDGET  WILL BE SAVED TO FILE: flow.lak.bud
+    OPENED ON UNIT: 1020
+    MOVER OPTION ENABLED
+    TIME CONVERSION VALUE (   86400.00    ) SPECIFIED.
+    LENGTH CONVERSION VALUE (   3.280810    ) SPECIFIED.
+ END OF LAK OPTIONS
+
+ PROCESSING LAK DIMENSIONS
+    NLAKES =       2
+    NOUTLETS =       1
+ END OF LAK DIMENSIONS
+
+ PROCESSING LAK PACKAGEDATA
+ END OF LAK PACKAGEDATA
+
+
+    MAXBOUND =     110
+
+ PROCESSING LAK LAKE_CONNECTIONS
+ END OF LAK CONNECTIONDATA
+
+ PROCESSING LAK OUTLETS
+ END OF LAK OUTLETS
+    STRT set from input file
+
+ MVR -- WATER MOVER PACKAGE, VERSION 8, 1/29/2016 INPUT READ FROM UNIT 1007
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:58:13.
+ PROCESSING MVR OPTIONS
+    LISTS OF WATER MOVER FLOWS WILL BE PRINTED TO LIST FILE.
+
+ OPENED flow.mvr.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1021   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    MVR  BUDGET  WILL BE SAVED TO FILE: flow.mvr.bud
+    OPENED ON UNIT: 1021
+ END OF MVR OPTIONS
+
+ PROCESSING MVR DIMENSIONS
+    MAXMVR = 2
+    MAXPACKAGES = 2
+ END OF MVR DIMENSIONS
+
+ PROCESSING MVR PACKAGES
+   INCLUDING PACKAGE: FLOW/SFR-1
+   INCLUDING PACKAGE: FLOW/LAK-1
+ END OF MVR PACKAGES
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1022
+      FILE NAME: flow.dis.grb
+
+ OPENED flow.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1022   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:58:13.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1023
+      FILE NAME: flow.bud
+
+ OPENED flow.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1023   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1024
+      FILE NAME: flow.hds
+
+ OPENED flow.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1024   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+The observation utility is active for "SFR-1"
+ # File generated by Flopy version 3.8.2 on 11/13/2025 at 14:58:13.
+
+Processing observation options:
+
+Text output number of digits of precision set to:  7
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "flow.sfr.obs"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ REACH1LEAKAGE                            CONTINUOUS  SFR                            ALL TIMES    "  SEG1"                                   flow.sfr.obs.csv                                                                
+ REACH2LEAKAGE                            CONTINUOUS  SFR                            ALL TIMES    "  SEG2"                                   flow.sfr.obs.csv                                                                
+ REACH3LEAKAGE                            CONTINUOUS  SFR                            ALL TIMES    "  SEG3"                                   flow.sfr.obs.csv                                                                
+ REACH4LEAKAGE                            CONTINUOUS  SFR                            ALL TIMES    "  SEG4"                                   flow.sfr.obs.csv                                                                
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ SFR PACKAGE (SFR-1) CONVERSION DATA
+    UNIT CONVERSION VALUE (128382.9751514183).
+
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+  READING WATER MOVERS FOR PERIOD 1
+
+ END OF DATA FOR PERIOD      1
+
+    2 MOVERS READ FOR PERIOD 1
+
+ REUSING LAKS FROM LAST STRESS PERIOD
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL FLOW             PACKAGE NPF             CONNECTED TO MODEL FLOW             PACKAGE NPF              ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL FLOW             PACKAGE NPF             CONNECTED TO MODEL FLOW             PACKAGE NPF              ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL FLOW             PACKAGE FLOW            CONNECTED TO MODEL FLOW             PACKAGE RCH-1            ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL FLOW             PACKAGE FLOW            CONNECTED TO MODEL FLOW             PACKAGE CHD-1            ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              SFR IN MODEL FLOW             PACKAGE FLOW            CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              LAK IN MODEL FLOW             PACKAGE FLOW            CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1023 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING     FLOW-JA-FACE IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              GWF IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE FLOW             ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         RAINFALL IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING      EVAPORATION IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING           RUNOFF IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       EXT-INFLOW IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING      EXT-OUTFLOW IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING          STORAGE IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         FROM-MVR IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING           TO-MVR IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1017 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              GWF IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE FLOW             ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         RAINFALL IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING      EVAPORATION IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING           RUNOFF IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       EXT-INFLOW IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       WITHDRAWAL IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING      EXT-OUTFLOW IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING          STORAGE IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         CONSTANT IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         FROM-MVR IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING           TO-MVR IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1020 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       MOVER-FLOW IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1021 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       MOVER-FLOW IN MODEL FLOW             PACKAGE SFR-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1021 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       MOVER-FLOW IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE SFR-1            ON UNIT   1021 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       MOVER-FLOW IN MODEL FLOW             PACKAGE LAK-1           CONNECTED TO MODEL FLOW             PACKAGE LAK-1            ON UNIT   1021 AT TIME STEP      1, STRESS PERIOD      1
+
+ SFR PACKAGE (SFR-1) FLOW RATES   PERIOD      1   STEP        1
+ ----------------------------------------------------------------------------------------
+   NUMBER   CELLID                    RATE       NAME                                    
+ ----------------------------------------------------------------------------------------
+     1      (1,1,23)              11228.366      SEG1                                    
+     2      (1,2,23)              6914.2728      SEG1                                    
+     3      (1,2,22)             -33307.739      SEG1                                    
+     4      (1,3,21)             -34404.945      SEG1                                    
+     5      (1,4,20)             -29479.429      SEG1                                    
+     6      (1,5,20)             -23529.635      SEG1                                    
+     7      (1,17,18)             30013.514      SEG2                                    
+     8      (1,18,18)             17648.951      SEG2                                    
+     9      (1,19,18)             11742.595      SEG2                                    
+     10     (1,20,17)             15441.428      SEG2                                    
+     11     (1,21,17)             8914.6616      SEG2                                    
+     12     (1,22,17)             5602.3041      SEG2                                    
+     13     (1,23,16)             13331.647      SEG2                                    
+     14     (1,24,16)             8334.3720      SEG2                                    
+     15     (1,25,16)             5504.0481      SEG2                                    
+     16     (1,26,16)             3293.7627      SEG2                                    
+     17     (1,27,16)             1513.2612      SEG2                                    
+     18     (1,28,15)             14910.189      SEG2                                    
+     19     (1,18,11)            -5016.9721      SEG3                                    
+     20     (1,19,11)             6073.6395      SEG3                                    
+     21     (1,19,12)            -18117.708      SEG3                                    
+     22     (1,20,12)            -7865.9877      SEG3                                    
+     23     (1,21,12)            -6882.0359      SEG3                                    
+     24     (1,22,13)            -14546.445      SEG3                                    
+     25     (1,23,13)            -9311.1491      SEG3                                    
+     26     (1,24,13)             5157.8060      SEG3                                    
+     27     (1,24,14)            -21168.845      SEG3                                    
+     28     (1,25,14)            -8607.6233      SEG3                                    
+     29     (1,26,14)            -4585.0071      SEG3                                    
+     30     (1,27,14)             1102.3347      SEG3                                    
+     31     (1,28,15)            -11904.940      SEG3                                    
+     32     (1,29,15)             9429.8183      SEG4                                    
+     33     (1,30,15)             4944.6259      SEG4                                    
+     34     (1,31,15)             3962.3411      SEG4                                    
+     35     (1,32,15)             4363.7969      SEG4                                    
+     36     (1,33,15)             5523.0337      SEG4                                    
+     37     (1,34,15)             6389.9248      SEG4                                    
+     38     (1,35,15)             4486.6958      SEG4                                    
+ ----------------------------------------------------------------------------------------
+
+
+
+
+ LAK PACKAGE (LAK-1) FLOW RATES   PERIOD      1   STEP        1
+ ----------------------------------------------------------------------------------------
+   NUMBER   CELLID                    RATE       NAME                                    
+ ----------------------------------------------------------------------------------------
+     1      (1,5,19)             -3917.3822      LAKE1                                   
+     2      (1,6,18)             -2710.7194      LAKE1                                   
+     3      (2,6,19)             -32686.084      LAKE1                                   
+     4      (1,5,20)             -2648.6710      LAKE1                                   
+     5      (1,6,21)             -2389.3116      LAKE1                                   
+     6      (2,6,20)             -26959.519      LAKE1                                   
+     7      (1,6,18)             -2729.6704      LAKE1                                   
+     8      (1,7,17)             -2088.1037      LAKE1                                   
+     9      (2,7,18)             -21921.985      LAKE1                                   
+     10     (2,7,19)             -7487.0248      LAKE1                                   
+     11     (1,7,21)             -1436.2571      LAKE1                                   
+     12     (2,7,20)             -10362.884      LAKE1                                   
+     13     (1,7,16)             -3192.1064      LAKE1                                   
+     14     (1,8,15)             -2634.7961      LAKE1                                   
+     15     (2,8,16)             -27213.024      LAKE1                                   
+     16     (1,7,17)             -2102.7018      LAKE1                                   
+     17     (2,8,17)             -12709.415      LAKE1                                   
+     18     (2,8,18)             -4196.0717      LAKE1                                   
+     19     (2,8,19)             -1926.4078      LAKE1                                   
+     20     (1,8,21)             -804.90030      LAKE1                                   
+     21     (2,8,20)             -4879.5078      LAKE1                                   
+     22     (1,9,15)             -1616.4083      LAKE1                                   
+     23     (2,9,16)             -10663.255      LAKE1                                   
+     24     (2,9,17)             -2827.7654      LAKE1                                   
+     25     (2,9,18)             -877.65764      LAKE1                                   
+     26     (2,9,19)             -496.04756      LAKE1                                   
+     27     (2,9,20)             -1439.7358      LAKE1                                   
+     28     (1,8,21)             -810.52744      LAKE1                                   
+     29     (1,9,22)             -777.82022      LAKE1                                   
+     30     (2,9,21)             -7025.0627      LAKE1                                   
+     31     (1,10,15)            -885.15607      LAKE1                                   
+     32     (1,11,16)            -51.198241      LAKE1                                   
+     33     (2,10,16)            -5150.7973      LAKE1                                   
+     34     (2,10,17)            -932.57911      LAKE1                                   
+     35     (2,10,18)            -220.27062      LAKE1                                   
+     36     (2,10,19)            -133.18602      LAKE1                                   
+     37     (2,10,20)            -466.64625      LAKE1                                   
+     38     (1,10,22)            -407.09871      LAKE1                                   
+     39     (2,10,21)            -2559.9989      LAKE1                                   
+     40     (1,11,16)            -50.842794      LAKE1                                   
+     41     (2,11,17)            -105.98848      LAKE1                                   
+     42     (2,11,18)            -0.27553698     LAKE1                                   
+     43     (2,11,19)             7.4725924      LAKE1                                   
+     44     (2,11,20)            -18.032153      LAKE1                                   
+     45     (1,11,22)            -119.10018      LAKE1                                   
+     46     (2,11,21)            -432.05893      LAKE1                                   
+     47     (1,12,16)             265.40214      LAKE1                                   
+     48     (2,12,17)             1666.5297      LAKE1                                   
+     49     (2,12,18)             311.97813      LAKE1                                   
+     50     (2,12,19)             216.77621      LAKE1                                   
+     51     (2,12,20)             720.96268      LAKE1                                   
+     52     (1,12,22)             208.03293      LAKE1                                   
+     53     (1,13,21)             452.33742      LAKE1                                   
+     54     (2,12,21)             2893.0626      LAKE1                                   
+     55     (1,13,16)             719.11964      LAKE1                                   
+     56     (2,13,17)             4368.9835      LAKE1                                   
+     57     (2,13,18)             890.51538      LAKE1                                   
+     58     (2,13,19)             872.80450      LAKE1                                   
+     59     (1,13,21)             449.19703      LAKE1                                   
+     60     (2,13,20)             3338.2256      LAKE1                                   
+     61     (1,14,16)             1335.7730      LAKE1                                   
+     62     (2,14,17)             8916.5894      LAKE1                                   
+     63     (2,14,18)             2360.5992      LAKE1                                   
+     64     (2,14,19)             3288.7310      LAKE1                                   
+     65     (1,14,21)             1024.0501      LAKE1                                   
+     66     (1,15,20)             1345.8656      LAKE1                                   
+     67     (2,14,20)             10927.703      LAKE1                                   
+     68     (1,15,16)             2251.1079      LAKE1                                   
+     69     (1,16,17)             2326.6392      LAKE1                                   
+     70     (2,15,17)             21707.485      LAKE1                                   
+     71     (2,15,18)             7841.4172      LAKE1                                   
+     72     (1,15,20)             1336.5218      LAKE1                                   
+     73     (1,16,19)             1894.8416      LAKE1                                   
+     74     (2,15,19)             15202.047      LAKE1                                   
+     75     (1,16,17)             2310.4863      LAKE1                                   
+     76     (1,16,19)             1881.6865      LAKE1                                   
+     77     (1,17,18)             2463.0042      LAKE1                                   
+     78     (2,16,18)             30847.482      LAKE1                                   
+     79     (1,18,2)             -7975.5666      LAKE2                                   
+     80     (1,19,3)             -5599.5872      LAKE2                                   
+     81     (2,19,2)             -58337.736      LAKE2                                   
+     82     (1,20,3)             -3403.4835      LAKE2                                   
+     83     (2,20,2)             -23024.863      LAKE2                                   
+     84     (1,21,3)             -1902.6876      LAKE2                                   
+     85     (2,21,2)             -11362.179      LAKE2                                   
+     86     (2,22,2)             -3244.8443      LAKE2                                   
+     87     (1,21,3)             -1915.9895      LAKE2                                   
+     88     (1,22,4)             -1702.8202      LAKE2                                   
+     89     (2,22,3)             -14118.140      LAKE2                                   
+     90     (2,23,1)              123.65388      LAKE2                                   
+     91     (2,23,2)             -251.22231      LAKE2                                   
+     92     (2,23,3)             -1572.6574      LAKE2                                   
+     93     (1,22,4)             -1714.7248      LAKE2                                   
+     94     (1,23,5)             -822.08691      LAKE2                                   
+     95     (2,23,4)             -8176.4028      LAKE2                                   
+     96     (2,24,1)              1088.0997      LAKE2                                   
+     97     (2,24,2)              2472.2279      LAKE2                                   
+     98     (1,25,3)              1741.4195      LAKE2                                   
+     99     (2,24,3)              8405.5504      LAKE2                                   
+    100     (1,24,5)              890.28645      LAKE2                                   
+    101     (1,25,4)              2578.9610      LAKE2                                   
+    102     (2,24,4)              13589.746      LAKE2                                   
+    103     (2,25,1)              5905.1805      LAKE2                                   
+    104     (1,25,3)              1729.3296      LAKE2                                   
+    105     (2,25,2)              12762.786      LAKE2                                   
+    106     (1,27,1)              5814.3316      LAKE2                                   
+    107     (2,26,1)              32738.658      LAKE2                                   
+    108     (1,26,3)              3808.6162      LAKE2                                   
+    109     (1,27,2)              6218.5544      LAKE2                                   
+    110     (2,26,2)              45258.115      LAKE2                                   
+ ----------------------------------------------------------------------------------------
+
+
+
+
+ SFR-1 PACKAGE - SUMMARY OF FLOWS FOR EACH CONTROL VOLUME   PERIOD      1   STEP        1
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                                                                                               PERCENT   
+   NUMBER   CELLID                  INFLOW      OUTFLOW        GWF        RAINFALL   EVAPORATION     RUNOFF     EXT INFLOW  EXT OUTFLOW    STORAGE      FROM MVR      TO MVR      IN - OUT    DIFFERENCE 
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1      (1,1,23)              0.0000      -75172.      -11228.       0.0000       0.0000       0.0000       86400.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     2      (1,2,23)              75172.      -68257.      -6914.3       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     3      (1,2,22)              68257.      -1.01565E+05  33308.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     4      (1,3,21)              1.01565E+05 -1.35970E+05  34405.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     5      (1,4,20)              1.35970E+05 -1.65449E+05  29479.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     6      (1,5,20)              1.65449E+05  0.0000       23530.       0.0000       0.0000       0.0000       0.0000       6.94699E-04  0.0000       0.0000      -1.88979E+05  0.0000       0.0000     
+     7      (1,17,18)             0.0000      -2.37386E+05 -30014.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       2.67400E+05  0.0000       0.0000       0.0000     
+     8      (1,18,18)             2.37386E+05 -2.19737E+05 -17649.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     9      (1,19,18)             2.19737E+05 -2.07995E+05 -11743.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     10     (1,20,17)             2.07995E+05 -1.92553E+05 -15441.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     11     (1,21,17)             1.92553E+05 -1.83639E+05 -8914.7       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     12     (1,22,17)             1.83639E+05 -1.78036E+05 -5602.3       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     13     (1,23,16)             1.78036E+05 -1.64705E+05 -13332.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     14     (1,24,16)             1.64705E+05 -1.56370E+05 -8334.4       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     15     (1,25,16)             1.56370E+05 -1.50866E+05 -5504.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     16     (1,26,16)             1.50866E+05 -1.47572E+05 -3293.8       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     17     (1,27,16)             1.47572E+05 -1.46059E+05 -1513.3       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     18     (1,28,15)             1.46059E+05 -1.31149E+05 -14910.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     19     (1,18,11)             0.0000      -13657.       5017.0       0.0000       0.0000       0.0000       8640.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     20     (1,19,11)             13657.      -7583.3      -6073.6       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     21     (1,19,12)             7583.3      -25701.       18118.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     22     (1,20,12)             25701.      -33567.       7866.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     23     (1,21,12)             33567.      -40449.       6882.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     24     (1,22,13)             40449.      -54996.       14546.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     25     (1,23,13)             54996.      -64307.       9311.2       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     26     (1,24,13)             64307.      -59149.      -5157.8       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     27     (1,24,14)             59149.      -80318.       21169.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     28     (1,25,14)             80318.      -88925.       8607.6       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     29     (1,26,14)             88925.      -93510.       4585.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     30     (1,27,14)             93510.      -92408.      -1102.3       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     31     (1,28,15)             92408.      -1.04313E+05  11905.       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     32     (1,29,15)             2.35462E+05 -2.26032E+05 -9429.8       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     33     (1,30,15)             2.26032E+05 -2.21088E+05 -4944.6       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     34     (1,31,15)             2.21088E+05 -2.17125E+05 -3962.3       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     35     (1,32,15)             2.17125E+05 -2.12761E+05 -4363.8       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     36     (1,33,15)             2.12761E+05 -2.07238E+05 -5523.0       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     37     (1,34,15)             2.07238E+05 -2.00848E+05 -6389.9       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000     
+     38     (1,35,15)             2.00848E+05  0.0000      -4486.7       0.0000       0.0000       0.0000       0.0000      -1.96362E+05  0.0000       0.0000       0.0000       0.0000       0.0000     
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ LAK-1 PACKAGE - SUMMARY OF FLOWS FOR EACH CONTROL VOLUME   PERIOD      1   STEP        1
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                                                                          PERCENT   
+   NUMBER       GWF        RAINFALL   EVAPORATION     RUNOFF     EXT INFLOW   WITHDRAWAL  EXT OUTFLOW    STORAGE      CONSTANT     FROM MVR      TO MVR      IN - OUT    DIFFERENCE 
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     1       78421.       0.0000       0.0000       0.0000       0.0000       0.0000       3.89020E-03  0.0000       0.0000       1.88979E+05 -2.67400E+05 -1.20092E-02 -2.97225E-06
+     2      -0.52582      0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000      -0.52582     -3.62322E-04
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ WATER MOVER PACKAGE (MVR) FLOW RATES   PERIOD      1   STEP        1
+ --------------------------------------------------------------------------------------------------------------------------
+                                               PROVIDER  AVAILABLE   PROVIDED                                     RECEIVER 
+   NUMBER           PROVIDER LOCATION             ID        RATE       RATE            RECEIVER LOCATION             ID    
+ --------------------------------------------------------------------------------------------------------------------------
+     1                 FLOW/SFR-1                 6       1.890E+05  1.890E+05            FLOW/LAK-1                 1     
+     2                 FLOW/LAK-1                 1       2.674E+05  2.674E+05            FLOW/SFR-1                 7     
+ --------------------------------------------------------------------------------------------------------------------------
+
+
+
+ SFR PACKAGE (SFR-1) STAGES FOR EACH CONTROL VOLUME   PERIOD      1   STEP        1
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                               STREAMBED    STREAMBED  
+ NAME                                       NUMBER   CELLID                  STAGE        DEPTH        WIDTH       GWF HEAD   CONDUCTANCE    GRADIENT  
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+ SEG1                                         1      (1,1,23)              48.870       0.23351      5.0000       48.814       2.00000E+05  5.61418E-02
+ SEG1                                         2      (1,2,23)              48.308       0.21740      5.0000       48.239       1.00000E+05  6.91427E-02
+ SEG1                                         3      (1,2,22)              47.786       0.24059      5.0000       47.953       2.00000E+05 -0.16654    
+ SEG1                                         4      (1,3,21)              47.112       0.29425      5.0000       47.284       2.00000E+05 -0.17202    
+ SEG1                                         5      (1,4,20)              46.430       0.33945      5.0000       46.578       2.00000E+05 -0.14740    
+ SEG1                                         6      (1,5,20)              45.738       0.37411      5.0000       45.855       2.00000E+05 -0.11765    
+ SEG2                                         7      (1,17,18)             44.500       0.43757      5.0000       44.350       2.00000E+05  0.15007    
+ SEG2                                         8      (1,18,18)             43.600       0.41229      5.0000       43.512       2.00000E+05  8.82448E-02
+ SEG2                                         9      (1,19,18)             42.709       0.39617      5.0000       42.650       2.00000E+05  5.87130E-02
+ SEG2                                         10     (1,20,17)             41.818       0.38087      5.0000       41.741       2.00000E+05  7.72071E-02
+ SEG2                                         11     (1,21,17)             40.929       0.36680      5.0000       40.885       2.00000E+05  4.45733E-02
+ SEG2                                         12     (1,22,17)             40.046       0.35824      5.0000       40.018       2.00000E+05  2.80115E-02
+ SEG2                                         13     (1,23,16)             39.159       0.34687      5.0000       39.093       2.00000E+05  6.66582E-02
+ SEG2                                         14     (1,24,16)             38.271       0.33354      5.0000       38.229       2.00000E+05  4.16719E-02
+ SEG2                                         15     (1,25,16)             37.387       0.32484      5.0000       37.360       2.00000E+05  2.75202E-02
+ SEG2                                         16     (1,26,16)             36.507       0.31923      5.0000       36.490       2.00000E+05  1.64688E-02
+ SEG2                                         17     (1,27,16)             35.629       0.31613      5.0000       35.621       2.00000E+05  7.56631E-03
+ SEG2                                         18     (1,28,15)             34.743       0.30540      5.0000       34.668       2.00000E+05  7.45509E-02
+ SEG3                                         19     (1,18,11)             41.232       7.25492E-02  5.0000       41.257       2.00000E+05 -2.50849E-02
+ SEG3                                         20     (1,19,11)             40.718       7.04664E-02  5.0000       40.657       1.00000E+05  6.07364E-02
+ SEG3                                         21     (1,19,12)             40.399       9.22634E-02  5.0000       40.580       1.00000E+05 -0.18118    
+ SEG3                                         22     (1,20,12)             39.926       0.13043      5.0000       39.965       2.00000E+05 -3.93299E-02
+ SEG3                                         23     (1,21,12)             39.263       0.14903      5.0000       39.297       2.00000E+05 -3.44102E-02
+ SEG3                                         24     (1,22,13)             38.605       0.17359      5.0000       38.678       2.00000E+05 -7.27322E-02
+ SEG3                                         25     (1,23,13)             37.948       0.19846      5.0000       37.995       2.00000E+05 -4.65557E-02
+ SEG3                                         26     (1,24,13)             37.441       0.20258      5.0000       37.390       1.00000E+05  5.15781E-02
+ SEG3                                         27     (1,24,14)             37.116       0.21796      5.0000       37.327       1.00000E+05 -0.21169    
+ SEG3                                         28     (1,25,14)             36.631       0.24479      5.0000       36.674       2.00000E+05 -4.30381E-02
+ SEG3                                         29     (1,26,14)             35.961       0.25607      5.0000       35.984       2.00000E+05 -2.29250E-02
+ SEG3                                         30     (1,27,14)             35.282       0.25899      5.0000       35.276       2.00000E+05  5.51167E-03
+ SEG3                                         31     (1,28,15)             34.609       0.26791      5.0000       34.668       2.00000E+05 -5.95247E-02
+ SEG4                                         32     (1,29,15)             33.916       0.40185      5.0000       33.869       2.00000E+05  4.71491E-02
+ SEG4                                         33     (1,30,15)             32.937       0.39429      5.0000       32.912       2.00000E+05  2.47231E-02
+ SEG4                                         34     (1,31,15)             31.961       0.38956      5.0000       31.941       2.00000E+05  1.98117E-02
+ SEG4                                         35     (1,32,15)             30.985       0.38510      5.0000       30.963       2.00000E+05  2.18190E-02
+ SEG4                                         36     (1,33,15)             30.008       0.37976      5.0000       29.981       2.00000E+05  2.76152E-02
+ SEG4                                         37     (1,34,15)             29.030       0.37326      5.0000       28.998       2.00000E+05  3.19496E-02
+ SEG4                                         38     (1,35,15)             28.053       0.36726      5.0000       28.031       2.00000E+05  2.24335E-02
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ LAK PACKAGE (LAK-1) STAGES FOR EACH CONTROL VOLUME   PERIOD      1   STEP        1
+ -----------------------------------------------------------------------------------
+ NAME                   NUMBER      STAGE     SURFACE AREA WETTED AREA     VOLUME   
+ -----------------------------------------------------------------------------------
+ LAKE1                    1       45.075       7.20605E+06  7.41593E+06  1.10548E+08
+ LAKE2                    2       37.147       2.78416E+06  2.88704E+06  4.71828E+07
+ -----------------------------------------------------------------------------------
+
+
+
+ HEAD WILL BE SAVED ON UNIT 1024 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  SFR-1 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE SFR-1      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =  2088519722.9778                   GWF =      228728.4769
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =   867810240.0000            EXT-INFLOW =       95040.0000
+         EXT-OUTFLOW =           6.3433           EXT-OUTFLOW =       6.9470E-04
+             STORAGE =           0.0000               STORAGE =           0.0000
+            FROM-MVR =  2441627077.9329              FROM-MVR =      267399.7457
+              TO-MVR =           0.0000                TO-MVR =           0.0000
+
+            TOTAL IN =  5397957047.2540              TOTAL IN =      591168.2233
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =  1879409694.0966                   GWF =      205827.3677
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+         EXT-OUTFLOW =  1792979106.3255           EXT-OUTFLOW =      196361.7464
+             STORAGE =           0.0000               STORAGE =           0.0000
+            FROM-MVR =           0.0000              FROM-MVR =           0.0000
+              TO-MVR =  1725568246.8319                TO-MVR =      188979.1093
+
+           TOTAL OUT =  5397957047.2540             TOTAL OUT =      591168.2233
+
+            IN - OUT =      -9.5367E-07              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  LAK-1 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE LAK-1      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =  3288886149.8583                   GWF =      360189.0428
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+          WITHDRAWAL =           0.0000            WITHDRAWAL =           0.0000
+         EXT-OUTFLOW =          35.5214           EXT-OUTFLOW =       3.8902E-03
+             STORAGE =           0.0000               STORAGE =           0.0000
+            CONSTANT =           0.0000              CONSTANT =           0.0000
+            FROM-MVR =  1725568246.8319              FROM-MVR =      188979.1093
+              TO-MVR =           0.0000                TO-MVR =           0.0000
+
+            TOTAL IN =  5014454432.2116              TOTAL IN =      549168.1560
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =  2572832265.2005                   GWF =      281768.9481
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+          WITHDRAWAL =           0.0000            WITHDRAWAL =           0.0000
+         EXT-OUTFLOW =           0.0000           EXT-OUTFLOW =           0.0000
+             STORAGE =           0.0000               STORAGE =           0.0000
+            CONSTANT =           0.0000              CONSTANT =           0.0000
+            FROM-MVR =           0.0000              FROM-MVR =           0.0000
+              TO-MVR =  2441627077.9329                TO-MVR =      267399.7457
+
+           TOTAL OUT =  5014459343.1334             TOTAL OUT =      549168.6938
+
+            IN - OUT =       -4910.9218              IN - OUT =          -0.5378
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+  WATER MOVER BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE WATER MOVER      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+               SFR-1 =  1725568246.8319                 SFR-1 =      188979.1093
+               LAK-1 =  2441627077.9329                 LAK-1 =      267399.7457
+
+            TOTAL IN =  4167195324.7648              TOTAL IN =      456378.8550
+
+          OUT:                                     OUT:
+          ----                                     ----
+               SFR-1 =  2441627077.9329                 SFR-1 =      267399.7457
+               LAK-1 =  1725568246.8319                 LAK-1 =      188979.1093
+
+           TOTAL OUT =  4167195324.7648             TOTAL OUT =      456378.8550
+
+            IN - OUT =           0.0000              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+                RCHA =  4677476498.0484                  RCHA =      512263.3335     RCH-1                            
+                 CHD =  3744144666.7533                   CHD =      410047.6034     CHD-1                            
+                 SFR =  1879409889.9395                   SFR =      205827.3891     SFR-1                            
+                 LAK =  2572832265.2005                   LAK =      281768.9481     LAK-1                            
+
+            TOTAL IN = 12873863319.9418              TOTAL IN =     1409907.2741
+
+          OUT:                                     OUT:
+          ----                                     ----
+                RCHA =           0.0000                  RCHA =           0.0000     RCH-1                            
+                 CHD =  7496474341.7158                   CHD =      820991.6046     CHD-1                            
+                 SFR =  2088519587.8107                   SFR =      228728.4621     SFR-1                            
+                 LAK =  3288886149.8583                   LAK =      360189.0428     LAK-1                            
+
+           TOTAL OUT = 12873880079.3847             TOTAL OUT =     1409909.1096
+
+            IN - OUT =      -16759.4430              IN - OUT =          -1.8354
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 7.88918E+08 1.31486E+07 2.19144E+05  9131.0      24.999    
+ STRESS PERIOD TIME 7.88918E+08 1.31486E+07 2.19144E+05  9131.0      24.999    
+         TOTAL TIME 7.88918E+08 1.31486E+07 2.19144E+05  9131.0      24.999    
+
+
+end timestep
+
