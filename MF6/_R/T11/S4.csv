@@ -1,0 +1,17 @@
+,0,1,2,3
+0,0,inflow,25.0,
+1,15,inflow,10.0,
+2,27,inflow,150.0,
+3,3,diversion,0,10.0
+4,9,status,simple,
+5,10,status,simple,
+6,11,status,simple,
+7,12,status,simple,
+8,13,status,simple,
+9,14,status,simple,
+10,9,stage,1075.545,
+11,10,stage,1072.636,
+12,11,stage,1069.873,
+13,12,stage,1066.819,
+14,13,stage,1063.619,
+15,14,stage,1061.581,
