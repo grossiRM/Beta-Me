@@ -1,0 +1,30 @@
+Lookup_Code,Geology_Type,Kh_m_d,Kh_m_d_original,diff
+11,Outwash,60.96,175.0,-114.03999999999999
+12,Peat & outwash,60.96,175.0,-114.03999999999999
+13,Water & outwash,60.96,175.0,-114.03999999999999
+14,Basal Coarse,22.86,175.0,-152.14
+15,Kame,22.86,19.812,3.0479999999999983
+16,Alluvial fan,15.24,12.192,3.048
+17,Alluvium & outwash,45.72,12.192,33.528
+18,Kame moraine,9.144,19.812,-10.668000000000001
+19,Till moraine,1.6764000000000001,86.39999999999999,-84.72359999999999
+20,Till & Bedrock,0.16764,86.39999999999999,-86.23235999999999
+21,Till,0.16764,86.39999999999999,-86.23235999999999
+22,Bedrock,0.16764,1.0,-0.83236
+23,Lacustrine silt & clay,0.050291999999999996,86.39999999999999,-86.34970799999999
+24,Outwash & alluvial fan combination,45.72,175.0,-129.28
+25,Kame & alluvial fan combination,22.86,80.0,-57.14
+26,Peat outwash & alluvium combination,22.86,80.0,-57.14
+27,Peat & kame combination,22.86,80.0,-57.14
+28,Alluvium & Kame combination,22.86,80.0,-57.14
+29,Artificial fill,3.81,80.0,-76.19
+30,Lacustrine Sand,3.81,2.0,1.81
+31,Lacustrine sand & alluvium combination,8.382,80.0,-71.618
+32,Till/alluvium combination,1.6764000000000001,80.0,-78.3236
+33,lacustrine sand & alluvium fan combination,8.382,80.0,-71.618
+34,lacustrine silt & alluvium fan combination,1.6764000000000001,80.0,-78.3236
+35,Alluvium & lacustrine silt and clay combination,8.382,80.0,-71.618
+36,Till & Kame combination,9.144,80.0,-70.856
+37,Till & Outwash combination,9.144,80.0,-70.856
+38,Kame & Water,22.86,80.0,-57.14
+39,Peat & Till combination,0.16764,80.0,-79.83236
