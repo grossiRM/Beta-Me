@@ -1,0 +1,110 @@
+simulation:
+  sim_name: 'sm_tmr'
+  version: 'mf6'
+  sim_ws: '../tmp/shellmound_tmr_inset'
+
+model:
+  simulation: 'sm_tmr'
+  modelname: 'sm_tmr'
+  options:
+    print_input: True
+    save_flows: True
+    newton: True
+  packages: ['dis',
+             'ic',
+             'npf',
+             'oc',
+             'sto',
+             'rch',
+             'sfr',
+             'wel',
+  ]
+  external_path: 'external/'
+  relative_external_filepaths: True
+
+parent:
+  # argments to flopy.modflow.Modflow.load for parent model
+  namefile: 'shellmound.nam'
+  model_ws: 'shellmound/tmr_parent'
+  version: 'mf6'
+  default_source_data: True  # if True, packages and variables that are omitted will be pulled from this model
+  copy_stress_periods: 'all'
+  start_date_time: '1998-04-01'
+  # inset_layer_mapping assumed to be 1:1 if not entered
+  length_units: 'meters'
+  time_units: 'days'
+  # parent model lower left corner location and CRS
+  # (overrides any information in name file)
+  SpatialReference:
+    xoff: 500955
+    yoff: 1175285
+    epsg: 5070
+
+setup_grid:
+  xoff: 501405 # lower left x-coordinate
+  yoff: 1175835 # lower left y-coordinate
+  rotation: 0.
+  epsg: 5070
+  snap_to_NHG: True
+
+dis:
+  remake_top: True
+  options:
+    length_units: 'meters'
+  dimensions:
+    nlay: 13
+    nrow: 30
+    ncol: 35
+  griddata:
+    delr: 1000.
+    delc: 1000.
+  source_data:
+    top: from_parent
+    botm: from_parent
+    idomain:
+      filename: 'shellmound/tmr_parent/gis/irregular_boundary.shp'
+  minimum_layer_thickness: 1 # layers less than this thickness are converted to vertical pass-through cells
+  drop_thin_cells: True
+
+tdis:
+  options:
+    time_units: 'days'
+    start_date_time: '1998-04-01'
+  perioddata:
+    csvfile:
+      filename: 'shellmound/tmr_parent/tables/stress_period_data.csv'
+      start_datetime_column: 'start_datetime'
+      end_datetime_column: 'end_datetime'
+      steady_column: 'steady'
+      nstp_column: 'nstp'
+      tsmult_column: 'tsmult'
+
+sfr:
+  options:
+    save_flows: True
+  source_data:
+    flowlines:
+      filename: 'shellmound/shps/flowlines.shp'
+      id_column: 'COMID'  # arguments to sfrmaker.Lines.from_shapefile
+      routing_column: 'tocomid'
+      width1_column: 'width1'
+      width2_column: 'width2'
+      up_elevation_column: 'elevupsmo'
+      dn_elevation_column: 'elevdnsmo'
+      name_column: 'GNIS_NAME'
+      width_units: 'feet'  # units of source data
+      elevation_units: 'feet'  # units of source data
+  sfrmaker_options:
+    # convert reaches corresponding to these LineString identifiers
+    # (in the flowlines id_column), and all downstream reaches
+    # to the MODFLOW River package
+    to_riv: [18047212]
+
+wel:
+  perimeter_boundary:
+    shapefile: 'shellmound/tmr_parent/gis/irregular_boundary.shp'
+    parent_cell_budget_file: 'shellmound/tmr_parent/shellmound.cbc'  # needed for the perimeter boundary setup
+    parent_binary_grid_file: 'shellmound/tmr_parent/shellmound.dis.grb'
+    # parent model head solution
+    # for determining boundary fluxes based on saturated thickness
+    parent_head_file: 'shellmound/tmr_parent/shellmound.hds'

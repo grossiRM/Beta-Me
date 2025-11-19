@@ -1,0 +1,64 @@
+# plsnt_lgr_inset model version 0.post3.dev0+ge07a693
+# File created by modflow-setup version 0.6.0 at 2025-11-19 16:36:01
+# MODFLOW-6 SFR input; created by SFRmaker v. 0.11.3.post37+gad8cb97
+
+BEGIN Options
+  save_flows
+  mover
+  budget fileout plsnt_lgr_inset.sfr.out.bin
+  stage fileout plsnt_lgr_inset.sfr.stage.bin
+  unit_conversion  86400.0
+  auxiliary line_id
+END Options
+
+BEGIN Dimensions
+  NREACHES 41
+END Dimensions
+
+BEGIN Packagedata
+  open/close external\plsnt_lgr_inset_packagedata.dat
+END Packagedata
+
+BEGIN Connectiondata
+  1 -2
+  2 -3 1
+  3 -4 2
+  4 -5 3
+  5 -6 4
+  6 -7 5
+  7 -8 6
+  8 -9 7
+  9 -10 8
+  10 -11 9
+  11 -12 10
+  12 -13 11
+  13 -14 12
+  14 -15 13
+  15 -16 14
+  16 -17 15
+  17 -18 16
+  18 -19 17
+  19 -20 18
+  20 -21 19
+  21 -22 20
+  22 -23 21
+  23 -24 22
+  24 -25 23
+  25 -26 24
+  26 -27 25
+  27 -28 26
+  28 -29 27
+  29 28
+  30 -31
+  31 -32 30
+  32 -33 31
+  33 -34 32
+  34 -35 33
+  35 -36 34
+  36 -37 35
+  37 -38 36
+  38 -39 37
+  39 -40 38
+  40 -41 39
+  41 40
+END Connectiondata

@@ -1,0 +1,46 @@
+
+SFR ERRORS:
+Checking for nan values...
+passed.
+Checking for continuity in segment and reach numbering...
+passed.
+Checking for increasing segment numbers in downstream direction...
+passed.
+Checking for circular routing...
+passed.
+Checking reach connections for proximity...
+2 segments with non-adjacent reaches found.
+At segments:
+1 2
+
+Checking for model cells with multiple non-zero SFR conductances...
+passed.
+Checking for streambed tops of less than -10...
+passed.
+Checking for streambed tops of greater than 15000...
+passed.
+Checking segment_data for downstream rises in streambed elevation...
+Segment elevup and elevdn not specified for nstrm=-16 and isfropt=1
+passed.
+Checking reach_data for downstream rises in streambed elevation...
+7 reaches encountered with strtop < strtop of downstream reach.
+Elevation rises:
+k i j iseg ireach strtop strtopdn d_strtop reachID diff
+4 20 15 2 1 290.66015625 292.6883850097656 2.028228759765625 5 -2.028228759765625
+4 21 15 2 2 290.66015625 292.11285400390625 1.45269775390625 6 -1.45269775390625
+2 24 20 2 10 288.81939697265625 290.1935119628906 1.374114990234375 14 -1.374114990234375
+2 24 19 2 9 289.3415832519531 290.66015625 1.318572998046875 13 -1.318572998046875
+2 24 18 2 8 289.4702453613281 290.66015625 1.189910888671875 12 -1.189910888671875
+1 24 21 2 11 288.60980224609375 289.4702453613281 0.860443115234375 15 -0.860443115234375
+4 23 18 2 7 290.1935119628906 290.66015625 0.466644287109375 11 -0.466644287109375
+
+Checking reach_data for inconsistencies between streambed elevations and the model grid...
+passed.
+Checking segment_data for inconsistencies between segment end elevations and the model grid...
+Segment elevup and elevdn not specified for nstrm=-16 and isfropt=1
+passed.
+Checking for streambed slopes of less than 0.0001...
+passed.
+Checking for streambed slopes of greater than 1.0...
+passed.
+
