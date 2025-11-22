@@ -1,0 +1,9 @@
+01
+02			pkg_list = gwf.get_package_list() ;print(pkg_list) ;riv = gwf.get_package('riv_0') ;riv.stress_period_data.get_data() ;riv.stress_period_data.plot(mflay=0, kper=0)
+03	Scalar data 	NPS IMF
+04	Array  data 	K _ RCH (transient) 
+05	List   data				BC(time_variant) Wells		wel_spd = flopy.mf6.ModflowGwfwel.stress_period_data.empty(gwf)
+06	OBS	
+07	Stress 		
+
+01.02.03..transport_GridGen

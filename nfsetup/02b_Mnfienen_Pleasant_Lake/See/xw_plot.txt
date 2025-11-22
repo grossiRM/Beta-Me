@@ -1,0 +1,19 @@
+fig = plt.figure(figsize=(13,5))  
+ax = fig.add_subplot(1, 3, 1, aspect="equal")  ; fig.tight_layout() 
+pmv = flopy.plot.PlotMapView(model=gwf_P, ax=ax, layer=0) ; cb = pmv.plot_array(head31, cmap="jet", masked_values=[1e30], vmin=vmin, vmax=vmax)  
+cbar=plt.colorbar(cb,shrink=0.55);cbar.ax.set_xlabel(r"H") ; ax.plot([xmin,xmax-2200,xmax,xmin,xmin],[ymin, ymin, ymax, ymax, ymin],color='white')
+ax.set_title("Potentiometric map")
+
+ax = fig.add_subplot(1, 3, 2, aspect="equal")  ; fig.tight_layout()
+pmv = flopy.plot.PlotMapView(model=gwf_C, ax=ax, layer=0)  ; cb = pmv.plot_array(head32, cmap="jet", masked_values=[1e30], vmin=vmin, vmax=vmax)  
+cbar = plt.colorbar(cb, shrink=0.5) ; cbar.ax.set_xlabel(r"H($m$)")     ; ax.set_title("Local Heads (m)")
+
+ax = fig.add_subplot(1, 3, 3, aspect="equal")  ; fig.tight_layout()
+pmv = flopy.plot.PlotMapView(model=gwf_C, ax=ax, layer=0)  ; _  = pmv.plot_array(tpcc,cmap="jet",alpha=0.2,masked_values=[1e30])    
+cbar=plt.colorbar(_, shrink=0.5) ; pmv.plot_bc(name="RIV", color='red') ; cbar.ax.set_xlabel(' T($m$)') ; ax.set_title(" Modelled Groundwater ")
+
+plt.show()
+
+
+
+b06_GW1876_mnfienen____PEST_Freyberg

@@ -1,0 +1,22 @@
+
+
+E:\15_REPOS\b01_christianlangevin\01_modflow-sandiego-2025-main_PEST\exercises\PS2_flopy					the same
+E:\15_REPOS\b01_christianlangevin\02_modflow-sandiego-2023-main\Lectures		Day2_6introduction_problem_set_2
+E:\15_REPOS\b01_christianlangevin\GW3099-2024-main\exercises\gwt								gwt
+E:\15_REPOS\b01_christianlangevin\modflow-training-princeton2024-main\presentations\Solute_and_Heat_Transport.pptx
+E:\15_REPOS\b01_christianlangevin\modflow-training-princeton2024-main\examples\notebooks_completed\gwe-ates.ipynb
+E:\15_REPOS\b01_christianlangevin\modflow-training-princeton2024-main\examples\notebooks_completed\gwt-gwe-vsc.ipynb		transp
+
+
+
+
+
+E:\15_REPOS\b01_christianlangevin\GW3099-2024-main\exercises\modflowapi			API
+E:\15_REPOS\b01_christianlangevin\modflow-dsd24-main_API\notebooks\5_MODFLOW_API
+
+
+
+https://modflow6-examples.readthedocs.io/en/master/_notebooks/ex-gwf-capture.html   _____________GUIDE____________________
+E:\15_REPOS\b01_christianlangevin\SaudiWaterForumMODFLOW24-main\ex6.ipynb
+https://oss.deltares.nl/web/imod/-/new-modflow6-api-deltares-usgs
+E:\15_REPOS\b03_modflowapi-develop\examples\notebooks
