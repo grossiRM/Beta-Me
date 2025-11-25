@@ -1,0 +1,10 @@
+model:
+  namefile: tf.nam
+  model_ws: tylerforks/
+flowlines:
+  nhdplus_paths: NHDPlus/
+dem:
+  filename: dem_26715.tif
+  elevation_units: meters
+options:
+  active_area: active_area.shp

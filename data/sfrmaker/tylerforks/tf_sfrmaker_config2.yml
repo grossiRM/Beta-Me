@@ -1,0 +1,23 @@
+package_version: 'mfnwt'
+package_name: 'tf'
+output_path: '.'
+modelgrid:
+  shapefile: grid.shp
+  icol: i  # attribute field with row numbers
+  jcol: j  # attribute field with column numbers
+flowlines:
+  NHDFlowlines: NHDPlus/NHDSnapshot/Hydrography/NHDFlowline.shp
+  PlusFlowlineVAA: NHDPlus/NHDPlusAttributes/PlusFlowlineVAA.dbf
+  PlusFlow: NHDPlus/NHDPlusAttributes/PlusFlow.dbf
+  elevslope: NHDPlus/NHDPlusAttributes/elevslope.dbf
+inflows: # see sfrmaker.flows.add_to_segment_data for arguments
+  filename: inflows.csv
+  line_id_column: line_id_COMID
+  period_column: SP  # column with model stress periods
+  data_column: inflow_m3d  # column with flow values
+dem:
+  filename: dem_26715.tif
+  elevation_units: meters
+  buffer_distance: 50.
+options:
+  model_length_units: 'feet'
