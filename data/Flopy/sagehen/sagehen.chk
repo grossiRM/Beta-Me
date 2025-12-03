@@ -1,0 +1,6 @@
+type,package,k,i,j,value,desc
+Error,model,0,0,0,0.000000,No solver package
+Warning,OC,0,0,0,0.000000,action(s) defined in OC stress_period_data ignored as they are not part the stress periods defined by DIS
+Warning,LPF,0,42,79,0.000000,specific yield values below checker threshold of 0.01
+Warning,LPF,0,43,79,0.000000,specific yield values below checker threshold of 0.01
+Warning,LPF,0,44,79,0.000000,specific yield values below checker threshold of 0.01
