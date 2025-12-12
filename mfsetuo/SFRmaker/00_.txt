@@ -1,0 +1,15 @@
+https://pubs.usgs.gov/publication/sir20235051/full					Mississipi
+https://code.usgs.gov/water/SFRmaker/-/blob/master/docs/source/philosophy.rst
+
+What SFRmaker doesn't do
+Development of Sfrmaker has been primarily driven by project needs. As a result, it does not provide comprehensive support for the features available in the MODFLOW SFR Package. Currently, only structured model grids (those with row, column indices) are supported. As noted above, advanced SFR input options including 
+
+lake connections, 
+unsaturated flow beneath streams 
+and diversions must be specified manually 
+	by editing the reach or segment data tables. 
+
+
+Non-rectangular channel geometries are not supported. Support for unstructured grids and other SFR features may be added in the future. Contributions are welcome through GitHub pull requests; see the Contributing page.
+
+
