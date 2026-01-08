@@ -1,7 +1,7 @@
 import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; from pathlib import Path 
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-REF1=Path("./data/Freyberg")  ;_R=Path("_R")  ;_R.mkdir(exist_ok=True) ;TA=Path("_R/folder_02a")  ;TA.mkdir(exist_ok=True)  ;ID='Freyberg'  
+REF1=Path('E:/15_REPOS/02_Beta-Me/data/Freyberg')  ;_R=Path("_R")  ;_R.mkdir(exist_ok=True) ;TA=Path("_R/folder_02a")  ;TA.mkdir(exist_ok=True)  ;ID='Freyberg'  
 
 bottom = np.loadtxt(REF1 / 'bottom.txt')  ; k11 = np.loadtxt(REF1 / 'hydraulic_conductivity.txt')    ; idomain = np.loadtxt(REF1 / 'idomain.txt', dtype=np.int32)
 length_units="meters"                       ; nlay=1;nrow=40;ncol=20        ; delr=250.0;delc=250.0                                    ; top=35.0;icelltype=1;strt=45.0

@@ -1,7 +1,7 @@
 import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; from pathlib import Path 
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-REF1=Path("./data/Freyberg") ; REF2 = Path("_R/folder_02a") ; sim_name='Freyberg'   ; bottom = np.loadtxt(REF1 / 'bottom.txt')   
+REF1=Path('E:/15_REPOS/02_Beta-Me/data/Freyberg') ; REF2 = Path("_R/folder_02a") ; sim_name='Freyberg'   ; bottom = np.loadtxt(REF1 / 'bottom.txt')   
 
 sim = flopy.mf6.MFSimulation.load(sim_ws = REF2, verbosity_level=0) 
 

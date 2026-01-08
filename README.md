@@ -13,10 +13,14 @@ pro - to run *.py directilly : Visual Studio
 - python Frey_02.py
 - python Frey_03.py
 _______________________________ 
+Creating environment
 GIT Bash (from anywhere but folder B =  A)       
-________ (1) - Install Environment :     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  (change destination adress to folder B ...adding!... \Vbeta)
+________ (1) - Environment :     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  (change destination adress to folder B ...adding!... \Vbeta)
 _______________________________ 
 VS terminal .. at the destination folder B
 ________ (2) -                          Vbeta\Scripts\Activate
 ________ (3) - pip install              .. (modules)         flopy , path, mathplotlib and a few others
 ________ (4) - Execute                  python Frey_01.py _02_03!
+_______________________________ 
+Activating environment  'name | adress'
+Open *.py ... on VS Code ... Ctl Shift P ...    Python select interpreter (pre installed kernel / environment) ... choose one 
