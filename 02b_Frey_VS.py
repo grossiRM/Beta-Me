@@ -1,8 +1,8 @@
-from Frey_01 import *
+from _thon import *
 from flopy.utils.postprocessing import get_water_table  
 
 gwf = sim.get_model(ID)       ; heads = gwf.output.head()  
-hds = gwf.output.head()             ; head = hds.get_alldata()[0]          ; wt = get_water_table(head)
+hds = gwf.output.head()       ; head = hds.get_alldata()[0]          ; wt = get_water_table(head)
 
 irow, icol = gwf.modelgrid.intersect(1200, 100)  
 def beta_plot(ax):

@@ -1,11 +1,9 @@
 import flopy     ; import numpy as np    ; import matplotlib.pyplot as plt   ; from pathlib import Path 
 import warnings  ; warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-ref_data=Path("./data/Freyberg")
-FA = Path("_RES/folder_01c") ; exe_name = 'E:\\15_REPOS\\00_BETAMI\\bin\\mf6.exe' ; sim_name='Freyberg'  
-bottom = np.loadtxt(ref_data / 'bottom.txt')   
+REF1=Path("./data/Freyberg") ; REF2 = Path("_R/folder_02a") ; sim_name='Freyberg'   ; bottom = np.loadtxt(REF1 / 'bottom.txt')   
 
-sim = flopy.mf6.MFSimulation.load(sim_ws = FA, verbosity_level=0, exe_name=exe_name) 
+sim = flopy.mf6.MFSimulation.load(sim_ws = REF2, verbosity_level=0) 
 
 gwf = sim.get_model(sim_name)       ; heads = gwf.output.head()  
 hds = gwf.output.head()             ; head = hds.get_alldata()[0] 
