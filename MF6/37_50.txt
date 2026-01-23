@@ -1,0 +1,71 @@
+19 - Fundamentals (Maths)
+	Advection(22) - Dispersion(24) - Sinks and Sources(26) - Chemical Reactions_Sorption(27)_ Dual-Domain(29)
+32 - Boundary Conditions
+Solution Techniques - Eulerian-Lagrangian
+	36 - Standard
+	38 - TVD
+	44 - MIX 
+	45 - MOC
+	48 - MMOC - 50 (HMOC)
+52 - Spatial Discretization
+55 - Temporal Discretization
+58 - Implementation of the Finite-Difference Method
+	Basic(61)Advection(61)Dispersion(62)SourceSink(66)Chemical(66))
+68 - GCG package - See Appendix A
+	Preconditioning options, Jacobi, SSOR, Cholesky (MIC)
+68 - Implicit - Explicit (plus stability constraints) - 69
+71 - 74 - TVD implementation (again) + Courant number (+ peclet)
+75 - 80 - MOC - 83 - particles ajustments 85 - MMOC - 88 - HMMOC
+----------------------------------------------------------------------------------------------
+92 - Program Structure and Design
+	95 -  Memory Allocation
+	98 -  Input Structure
+	100 - Output Structure	- Appendix D - 102 Main program - 105 Basic transport
+	106 - Advection package - 107 Dispersion package	Sink & source	Chemical reaction
+	109 - GCG - Flow model interface package - Utility package
+110 - Inputs
+	115 - Units
+	117 - BTN Package - Basic Package
+		- A1 to A20
+		- A16	-	NPRS
+		- A21	-	NSTP
+	127	- A23 	-	TTSMULT, TTSMAX	
+------------------------------------------------------------------------- Input - Advection Package	
+	129	- B01 	-	Percel
+	130	- B03 	-	DCEPS, NPLANE, NPL, NPH, NPMIN, NPMAX
+	131	- B04	-	INTERP, NLSINK, NPSINK
+--------133-------------------------------------------------------------- Input - Dispertion Package	
+--------134-------------------------------------------------------------- Input - Sink and Source
+--------138-------------------------------------------------------------- Input - Chemical 
+--------142-------------------------------------------------------------- Input - GCG
+		- F01	-	MXITER, ITER1, ISOLVE, NCRS
+
+Benchmark
+	145	- One-Dimensional Transport in a Uniform Flow Field
+	149	- One-Dimensional Transport with Nonlinear or Nonequilibrium Sorption
+	152	- Nonequilibrium sorption
+	153	- Two-Dimensional Transport in a Uniform Flow Field
+	154	- "Two-Dimensional Transport in a Diagonal Flow Field"
+	155	- Two-Dimensional Transport in a Radial Flow Field Concentration at an Injection/Extraction Well
+-----	159 	- Concentration at an Injection/Extraction Well
+*	160	- "Three-Dimensional Transport in a Uniform Flow Field"
+*	161	- "Two-Dimensional, Vertical Transport in a Heterogeneous Aquifer   161"
+-----	167	- A Two-Dimensional Application Example
+-----	169	- A Three-Dimensional Field Case Study
+176		- Efficiency versus accuracy
+178		- Effect of nonequilibrium sorption
+------------------------------------------------------------------------------
+185		- GCG
+		188	- Basic Iterative Method
+		188	- Acceleration Procedures - symmetric - nonsymmetric 190 (complex numbers)
+		191	- Stopping Procedures
+196		- Appendix B - Computer Memory Requirements
+200		- Appendix C - Linking MT3DMS with a Flow Model
+		- Appendix D - Postprocessing Programs
+https://www.tecplot.com/
+
+
+
+
+
+

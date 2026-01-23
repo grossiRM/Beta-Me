@@ -1,0 +1,35 @@
+https://opengeostat.github.io/pygslib/Tutorial.html#loading-python-packages
+
+https://github.com/opengeostat/pygslib/wiki/Before-compiling-in-Windows
+
+
+
+I https://geostatsguy.github.io/GeostatsPyDemos_Book/GeostatsPy_variogram_calculation.html			01 - 06		variogram_calculation
+	https://github.com/GeostatsGuy/DataScienceInteractivePython/blob/main/Interactive_Variogram_Calculation.ipynb		VAR			01
+		https://github.com/GeostatsGuy/PythonNumericalDemos/blob/master/GeostatsPy_variogram_calculation.ipynb		experimental 		02
+		https://github.com/GeostatsGuy/PythonNumericalDemos/blob/master/GeostatsPy_spatial_continuity_directions.ipynb				03
+	https://github.com/GeostatsGuy/DataScienceInteractivePython/blob/main/Interactive_Variogram_h_Scatter.ipynb		H-H			04
+	https://github.com/GeostatsGuy/DataScienceInteractivePython/blob/main/Interactive_Variogram_Nugget_Effect.ipynb		Nugget			05
+	b06_GeostatsPy_variogram_calculation_and_modeling - Copy.ipynb											06
+
+II https://geostatsguy.github.io/GeostatsPyDemos_Book/GeostatsPy_variogram_calculation_and_modeling.html			variogram_calculation_and_modeling
+
+	
+	https://geostatsguy.github.io/GeostatsPyDemos_Book/GeostatsPy_variogram_from_image.html
+	https://geostatsguy.github.io/GeostatsPyDemos_Book/GeostatsPy_variogram_models.html
+
+
+Interactive Nested Variogram Modeling Demostration
+
+
+
+05_Interactive_Variogram_Nugget_Effect_b		lag,gamma,npp = GAM(DA1,-9999,9999,1.0,1.0,0,1,nlag,1)
+08_GeostatsPy_kriging_b
+							por_vario = GSLIB.make_variogram  
+							perm_kmap, perm_vmap     = geostats.kb2d
+							GSLIB.locpix_st
+							GSLIB.pixelplt_st
+
+
+							nlagx,variox,nppx = geostats.gam(imageBWcrop,
+							nlagy,varioy,nppy

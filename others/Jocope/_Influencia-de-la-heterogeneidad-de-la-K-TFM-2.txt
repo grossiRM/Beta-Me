@@ -1,0 +1,14 @@
+34, 38	Solo
+41, 42	MF		43 Stocastico 		47	50	52	
+						60
+
+
+
+
+
+GSTAT
+https://github.com/gempy-project/subsurface_welly		 The voxel-dataset from GeoTOP
+
+    Trine Enemark, Lærke T. Andersen, Anne-Sophie Høyer, Karsten H. Jensen, Jacob Kidmose, Peter B. E. Sandersen & Torben O. Sonnenborg 
+
+https://github.com/daisy-model/daisy

@@ -13,6 +13,7 @@ pro - to run *.py directilly : Visual Studio
 - python Frey_02.py
 - python Frey_03.py
 _______________________________ 
+Terminal CRTL ' 
 Creating environment
 GIT Bash (from anywhere but folder B =  A)       
 ________ (1) - Environment :     python -m venv E:\15_REPOS\01_Beta-Me\Vbeta  (change destination adress to folder B ...adding!... \Vbeta)
