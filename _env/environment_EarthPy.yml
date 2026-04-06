@@ -1,0 +1,81 @@
+name: earth-analytics-python
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  
+  # Core scientific python
+  - numpy
+  - pandas
+  - scipy
+  - dask
+
+  # Geospatial libraries
+  # Coordinates and CRSs
+  - pyproj>=3.0
+  - geopy
+  - cartopy
+  # Vector data
+  - geopandas
+  - geojson
+  - pyogrio
+  # Raster data
+  - xarray
+  - h5py
+  - netcdf4
+  - rioxarray>=0.3.0
+  - xarray-spatial
+  - regionmask
+  
+  # Interactive computing
+  - ipython
+  - jupyterlab
+  - notebook
+  - tqdm
+  - nbresuse
+  - papermill
+  - nbclean
+  
+  # ML and modeling
+  - scikit-learn
+  - scikit-fuzzy
+
+  # Data access
+  - earthpy
+  - earthaccess
+  - pystac-client
+  - adlfs
+  - dataretrieval
+  - osmnx
+  
+  # Plotting
+  # Matplotlib
+  - matplotlib
+  - nc-time-axis
+  - descartes
+  - contextily
+  - seaborn
+  # Holoviews
+  # --- Avoid compatibility issues with bokeh and new holoviews
+  - holoviews<=1.19
+  - hvplot
+  - geoviews>=1.10
+  - selenium
+  - phantomjs
+  - jupyter_bokeh
+  # Folium
+  - folium
+  
+  # QA
+  - flake8
+  - flake8-import-order
+  - black
+  - autopep8
+  - pydocstyle
+  - nbqa
+
+  - pip:
+    - pygbif

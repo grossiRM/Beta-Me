@@ -1,0 +1,65 @@
+name: gw3099
+channels:
+  - conda-forge
+dependencies:
+
+  # primary dependencies
+  - python
+  - pip
+  - git
+  - ruff
+
+  # jupyter dependencies
+  - jupyter
+  - jupyterlab
+  - jupyterlab_execute_time
+  - jupytext
+
+  # class dependencies
+  - dataretrieval
+  - descartes
+  - filelock
+  - fiona
+  - geojson
+  - geopandas
+  - geos
+  - hvplot
+  - imageio
+  - ipywidgets
+  - matplotlib
+  - modflowapi
+  - modflow-devtools
+  - netcdf4
+  - numpy
+  - pandas>=2.2.0
+  - pooch
+  - openpyxl
+  - pyshp
+  - pestpp
+  - pyemu>=1.3.7
+  - pymetis
+  - pyproj
+  - pyvista
+  - pyyaml
+  - rasterio
+  - rasterstats
+  - rioxarray
+  - requests
+  - rtree
+  - scipy
+  - shapely
+  - statsmodels
+  - trame
+  - trame-client
+  - trame-server
+  - trame-vtk
+  - trame-vuetify
+  - uxarray
+  - vtk
+  - xlrd
+  - xarray
+  - xugrid
+
+  - pip:
+      # develop version for some last-minute prt-related fixes
+      - https://github.com/modflowpy/flopy/archive/develop.zip

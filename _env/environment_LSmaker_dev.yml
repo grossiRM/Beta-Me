@@ -1,0 +1,37 @@
+name: lsmaker_dev
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python
+- ipython
+- jupyter
+- notebook
+- ipykernel
+- matplotlib
+- pyyaml
+- requests
+- numpy
+- scipy
+- pandas
+- gdal
+- fiona
+- rasterio
+- shapely
+- pyproj
+- geopandas
+- codecov
+- coverage
+- flake8
+- pytest
+- sphinx
+- numpydoc
+- nbsphinx  # for rendering notebooks in sphinx-generated docs
+- sphinx-copybutton
+- sphinx_rtd_theme
+- twine
+- pip
+- pip:
+  - gis-utils
+  - versioneer
+

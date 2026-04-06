@@ -1,0 +1,25 @@
+name: lsmaker
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python
+- ipython
+- jupyter
+- notebook
+- ipykernel
+- matplotlib
+- pyyaml
+- requests
+- numpy
+- scipy
+- pandas
+- gdal
+- fiona
+- rasterio
+- shapely
+- pyproj
+- geopandas
+- pip
+- pip:
+  - gis-utils
